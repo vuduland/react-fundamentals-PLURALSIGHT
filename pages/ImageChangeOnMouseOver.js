@@ -1,0 +1,112 @@
+import React from 'react';
+import ImageToggleOnMouseOver from './ImageToggleOnMouseOver';
+
+const ImageChangeOnMouseOver = () => {
+  return (
+    <div>
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/anarchy.jpg'
+        secondaryImg='/pictures/color/anarchy-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat.jpg'
+        secondaryImg='/pictures/color/cat-c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat-2.jpg'
+        secondaryImg='/pictures/color/cat-2c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat-3.jpg'
+        secondaryImg='/pictures/color/cat-3c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat-4.jpg'
+        secondaryImg='/pictures/color/cat-4c.jpg'
+        alt=''
+      />
+      {/* &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat.jpg'
+        secondaryImg='/pictures/color/cat-c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat.jpg'
+        secondaryImg='/pictures/color/cat-c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cat.jpg'
+        secondaryImg='/pictures/color/cat-c.jpg'
+        alt=''
+      /> */}
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/cheetah.jpg'
+        secondaryImg='/pictures/color/cheetah-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/duck.jpg'
+        secondaryImg='/pictures/color/duck-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/elephant.jpg'
+        secondaryImg='/pictures/color/elephant-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/graffiti.jpg'
+        secondaryImg='/pictures/color/graffiti-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/lake.jpg'
+        secondaryImg='/pictures/color/lake-c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/raptor.jpg'
+        secondaryImg='/pictures/color/raptor-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/sphere.jpg'
+        secondaryImg='/pictures/color/sphere-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/sunset.jpg'
+        secondaryImg='/pictures/color/sunset-1c.jpg'
+        alt=''
+      />
+      &nbsp;&nbsp;&nbsp;
+      <ImageToggleOnMouseOver
+        primaryImg='/pictures/bw/tu.jpg'
+        secondaryImg='/pictures/color/tu-1c.jpg'
+        alt=''
+      />
+    </div>
+  );
+};
+
+export default ImageChangeOnMouseOver;

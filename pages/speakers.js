@@ -1,8 +1,8 @@
-import React from "react";
-import App from "../src/App";
+import React from 'react';
+import App from '../components/App';
 
 function speakers() {
-  return <App pageName="Speakers" />;
+  return <App pageName='Speakers' />;
 }
 
 export default speakers;

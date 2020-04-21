@@ -4,4 +4,4 @@ We usually like <em>functional components</em> because they do not have **side-e
 
 **useEffect**, when called, references and triggers a function and then this function triggers a different function, a.k.a. a side effect.
 
-The best usage of the **useEffect** hook is when Adding and Removing DOM event listeners. e.g. we add a listener to a DOM element and then, once the **functional component** goes away (finishes), we want to execute another **functional component**, i.e. the <em>side effect</em>, in order to preclude any potential resource leaks in the appliation.
+The best usage of the **useEffect** hook is when Adding and Removing DOM event listeners. e.g. we add a listener to a DOM element and then, once the **functional component** goes away (finishes), we want to execute another **functional component**, i.e. the <em>side effect</em>, in order to preclude any potential resource leaks in the application.

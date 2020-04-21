@@ -12,6 +12,7 @@ const pageToShow = (pageName) => {
 };
 
 const configValue = {
+  showSignMeUp: true,
   showSpeakerSpeakingDays: true,
 };
 // Below, we have wrapped our App component in a context provider and provided the configuration value above to it.

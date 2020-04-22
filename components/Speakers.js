@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useReducer } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../public/site.css';
@@ -12,7 +12,8 @@ const Speakers = ({}) => {
   const [speakingSaturday, setSpeakingSaturday] = useState(true);
   const [speakingSunday, setSpeakingSunday] = useState(true);
 
-  const [speakerList, setSpeakerList] = useState([]);
+  // const [speakerList, setSpeakerList] = useState([]);
+  const [speakerList, setSpeakerList] = useReducer((state, action) => action, []);
   const [isLoading, setIsLoading] = useState(true);
 
   const context = useContext(ConfigContext);

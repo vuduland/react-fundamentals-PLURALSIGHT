@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useReducer } from 'react';
+import React, { useState, useEffect, useContext, useReducer, useCallback, useMemo } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../public/site.css';
@@ -7,6 +7,7 @@ import { Menu } from './Menu';
 import SpeakerData from './SpeakerData';
 import SpeakerDetails from './SpeakerDetails';
 import { ConfigContext } from './App';
+import speakersReducer from './speakersReducer'; // this import statement makes it clear where we update our state from, the reducer!
 
 const Speakers = ({}) => {
   const [speakingSaturday, setSpeakingSaturday] = useState(true);
@@ -14,31 +15,7 @@ const Speakers = ({}) => {
   const [speakingSunday, setSpeakingSunday] = useState(true);
 
   // const [speakerList, setSpeakerList] = useState([]);
-
-  function speakersReducer(state, action) {
-    function updateFavorite(favoriteValue) {
-      return state.map((item, index) => {
-        if (item.id === action.sessionId) {
-          item.favorite = favoriteValue;
-          return item;
-        }
-        return item;
-      });
-    }
-    switch (action.type) {
-      case 'setSpeakerList': {
-        return action.data;
-      }
-      case 'favorite': {
-        return updateFavorite(true);
-      }
-      case 'unfavorite': {
-        return updateFavorite(false);
-      }
-      default:
-        return state;
-    }
-  }
+  // where reducer was called, then placed in it's own file
   // We can't call setSpeakerList here anymore b/c we are not pulling it with the useState hook. We use 'dispatch', could be any word, but is convention, in its place.
   const [speakerList, dispatch] = useReducer(speakersReducer, []);
 
@@ -72,9 +49,9 @@ const Speakers = ({}) => {
     setSpeakingSaturday(!speakingSaturday);
   };
 
-  const speakerListFiltered = isLoading
-    ? []
-    : speakerList
+  const newSpeakerList = useMemo(
+    () =>
+      speakerList
         .filter(({ sat, sun }) => (speakingSaturday && sat) || (speakingSunday && sun))
         .sort(function (a, b) {
           if (a.firstName < b.firstName) {
@@ -84,13 +61,17 @@ const Speakers = ({}) => {
             return 1;
           }
           return 0;
-        });
+        }),
+    [speakingSaturday, speakingSunday, speakerList]
+  );
+
+  const speakerListFiltered = isLoading ? [] : newSpeakerList;
 
   const handleChangeSunday = () => {
     setSpeakingSunday(!speakingSunday);
   };
 
-  const heartFavoriteHandler = (e, favoriteValue) => {
+  const heartFavoriteHandler = useCallback((e, favoriteValue) => {
     e.preventDefault();
     const sessionId = parseInt(e.target.attributes['data-sessionid'].value);
     dispatch({
@@ -107,7 +88,7 @@ const Speakers = ({}) => {
     //   })
     // );
     //console.log("changing session favorte to " + favoriteValue);
-  };
+  }, []);
 
   if (isLoading) return <div>Loading...</div>;
 
